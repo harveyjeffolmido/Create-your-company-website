@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>https://create.company.website.com</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom right, #007CF0, #00C6FF);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: gray;
+      color: white;
+      padding: 1.5em;
+      font-size: 1.8em;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 2em;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 0.8em;
+      margin-top: 1em;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    #signin-btn {
+      background-color: #f1f1f1;
+      color: #333;
+    }
+
+    #done-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    #save-btn {
+      background-color: #0b72e7;
+      color: white;
+      display: none;
+    }
+
+    .success-message {
+      color: green;
+      font-weight: bold;
+      display: none;
+      margin-top: 1em;
+      border-top: 2px solid green;
+      padding-top: 1em;
+    }
+
+    .contact {
+      margin-top: 3em;
+      text-align: center;
+    }
+
+    .contact button {
+      background-color: #333;
+      color: white;
+      margin-top: 0.5em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: rgba(0, 0, 0, 0.2);
+      font-size: 0.9em;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>create company</header>
+
+  <main>
+    <div class="card">
+      <p>Hey! Create your first company, and start earn money by your own!</p>
+      <input type="text" id="company-name" placeholder="Your company name" />
+      <select id="company-type">
+        <option value="" disabled selected>Select company type</option>
+        <option>Game Development Company</option>
+        <option>Movie Company</option>
+        <option>Delivery Company</option>
+        <option>Small Business</option>
+      </select>
+      <button id="signin-btn" onclick="signIn()">Sign In</button>
+      <button id="done-btn" onclick="createCompany()">Done</button>
+      <div class="success-message" id="success-message">
+        Company was successfully created.
+        <button id="save-btn" onclick="saveToGoogle()">Save to Google File</button>
+      </div>
+    </div>
+
+    <div class="contact">
+      <h1>Contact Us</h1>
+      <button onclick="contactUs()">Contact</button>
+    </div>
+  </main>
+
+  <footer>
+    ©2025 | create your company
+  </footer>
+
+  <script>
+    function signIn() {
+      // Placeholder: you would use Google OAuth here
+      alert("Redirecting to Google Sign-In...");
+      window.location.href = "https://accounts.google.com/signin";
+    }
+
+    function createCompany() {
+      const name = document.getElementById("company-name").value;
+      const type = document.getElementById("company-type").value;
+      if (!name || !type) {
+        alert("Please enter your company name and type.");
+        return;
+      }
+      document.getElementById("success-message").style.display = "block";
+      document.getElementById("save-btn").style.display = "inline-block";
+    }
+
+    function saveToGoogle() {
+      // Placeholder: redirecting to Google Drive (for simulation)
+      alert("Redirecting to Google Drive...");
+      window.location.href = "https://drive.google.com";
+    }
+
+    function contactUs() {
+      window.location.href = "mailto:organizationumber1830@gmail.com";
+    }
+  </script>
+
+</body>
+</html>
